@@ -1,0 +1,33 @@
+ <div class="container">
+   <div class="jumbotron">
+    <h1 class="center bold">Neumáticos</h1>
+  </div>
+  <div class="row">
+   <div class="col-md-12">
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th class="center"><b>N° Serie</b></th>
+           <th class="center"><b>Nombre Usuario</b></th>
+           <th class="center"><b>Categoría</b></th>
+           <th class="center"><b>Descripción</b></th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @items.each do |item| %>
+         <tr>
+           <td class="center"><%= item.number %>
+             <span class="input-group-btn float">
+               <button type="submit" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button>
+             </span>
+           </td>
+           <td class="center"><%= item.user.name if item.user %></td>
+           <td class="center"><%= item.category.name %></td>
+           <td class="center"><%= item.description %></td>
+         </tr>
+         <% end %>
+       </tbody>
+     </table>
+   </div>
+ </div>
+</div>
